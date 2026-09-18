@@ -1,0 +1,17 @@
+# Nothing here is needed to compute a target. energy_core is stdlib-only by
+# design — it takes numbers and returns numbers — and health_core needs only
+# sqlite3. Each dependency below buys one optional part of the system, and is
+# imported at the point of use so a missing one breaks that feature rather
+# than the import of everything else.
+
+# The tool surface: src/mcp_server.py. Without it the modules are still
+# callable directly from Python.
+mcp>=1.2
+
+# Garmin Connect sync: src/garmin_client.py. Without it the hand-logged half
+# works and the watch half does not.
+garminconnect>=0.2.19
+
+# Reading the CIQUAL spreadsheet in food_core.stage_ciqual(), which is a
+# one-off import. Labels, USDA and an already-staged CIQUAL table need nothing.
+xlrd>=2.0

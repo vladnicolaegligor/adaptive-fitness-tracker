@@ -49,10 +49,17 @@ profile.example.json  the only file describing a body.
 
 ## Setup
 
+Python 3.10+ (the type syntax needs it; developed on 3.13).
+
 ```
-cp profile.example.json profile.json     # or let an assistant fill it in
+pip install -r requirements.txt           # optional — see the file
+cp profile.example.json profile.json      # or let an assistant fill it in
 sqlite3 db/fitness.db < db/schema-health.sql
 ```
+
+Computing a target needs no third-party packages at all: `energy_core` is
+stdlib-only and `health_core` needs `sqlite3`. The requirements buy the MCP
+tool surface, the Garmin sync and the CIQUAL spreadsheet import.
 
 `FITNESS_PROFILE` and `FITNESS_DB` override those paths.
 
