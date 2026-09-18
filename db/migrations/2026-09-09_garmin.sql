@@ -1,4 +1,4 @@
--- Garmin Connect (Venu 3S) -> unified.db
+-- Garmin Connect (Venu 3S) -> the database
 --
 -- Deliberately parallel to the hand-logged health tables, not merged into
 -- them. body_log/meal_log/workout_log record what was chosen to report; these

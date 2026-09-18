@@ -1,7 +1,7 @@
 -- Health tracking: weight, nutrition, training.
--- Applied once, by hand, against db/unified.db. Neither HAL MARK 0 (node) nor
--- vault_mcp_server.py (python) creates these at runtime — two runtimes in two
--- languages issuing CREATE TABLE IF NOT EXISTS is how schemas drift apart.
+-- Applied once, in order, against the database. Nothing creates these at
+-- runtime: several processes issuing CREATE TABLE IF NOT EXISTS is how schemas
+-- drift apart.
 --
 -- Deliberately NOT reusing lifestyle_logs: it is AG-owned and carries
 -- CHECK(type IN ('gym','sleep','feeling','sick')), and its value/notes shape

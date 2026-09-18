@@ -362,12 +362,12 @@ def meal_recompute(meal_id: int) -> dict | None:
 #
 # garmin_core is pure stdlib and safe to import at call time; garmin_client
 # pulls in `garminconnect`, so it stays inside the sync tool. A top-level
-# import of it would take down every vault tool on a machine where that
+# import of it would take down every tool on this server on a machine where
 # package is missing, not just the two below.
 
 @mcp.tool()
 def garmin_sync(days: int = 3, end: str | None = None) -> dict:
-    """Pull the Venu 3S data for the last `days` days (default 3) into unified.db.
+    """Pull the watch data for the last `days` days (default 3) into the database.
 
     The window is deliberately more than one day: Garmin revises sleep, HRV and
     Body Battery hours after the fact, so a rolling re-pull corrects yesterday's

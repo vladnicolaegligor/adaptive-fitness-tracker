@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.13
-"""Garmin Connect -> unified.db sync.
+"""Garmin Connect sync.
 
     python3.13 src/garmin_sync.py auth --email you@example.com   # once, interactive
     python3.13 src/garmin_sync.py probe [--date YYYY-MM-DD]      # dump raw payloads
@@ -116,7 +116,7 @@ def main(argv=None) -> int:
     b.add_argument("--out")
     b.set_defaults(fn=cmd_probe)
 
-    c = sub.add_parser("sync", help="pull days + activities into unified.db")
+    c = sub.add_parser("sync", help="pull days + activities into the database")
     c.add_argument("--days", type=int, default=3)
     c.add_argument("--end", help="last date of the window (default today)")
     c.add_argument("--email")

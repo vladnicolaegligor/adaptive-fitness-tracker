@@ -1,4 +1,4 @@
--- Health & nutrition schema, extracted from unified.db.
+-- Health & nutrition schema.
 -- Structure only: no rows. The CIQUAL tables ship empty on purpose —
 -- the composition data is ANSES's to distribute, not mine.
 
