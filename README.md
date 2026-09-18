@@ -73,6 +73,11 @@ tool surface, the Garmin sync and the CIQUAL spreadsheet import.
   (notes, todos, a graph over them). Only the health, food and Garmin parts are
   here.
 
+## Licence
+
+MIT — use it, change it, ship it, no need to ask. The warranty disclaimer in
+there is the part that matters: see below.
+
 ## What it does not do
 
 It is arithmetic about energy balance. It is not medical advice, it does not
