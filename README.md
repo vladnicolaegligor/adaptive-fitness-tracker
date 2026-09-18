@@ -33,6 +33,10 @@ src/food_core.py      per-100g food composition: USDA and CIQUAL import, label
                       entry, CIQUAL micro gap-fill with provenance recorded,
                       meals as weighed components.
 src/health_core.py    the validating write path: weight, meals, workouts.
+src/mcp_server.py     25 tools over all of the above, so a meal or a session
+                      is logged as a sentence in chat rather than through a
+                      form. Register it with an MCP client:
+                      claude mcp add fitness -- python3.13 src/mcp_server.py
 src/garmin_*.py       Garmin Connect sync. Credentials are never in here — the
                       password lives in the macOS Keychain and the OAuth token
                       is cached under db/, which is gitignored.
@@ -58,10 +62,9 @@ sqlite3 db/fitness.db < db/schema-health.sql
 - **The CIQUAL composition tables.** The structure is here; the data is
   [ANSES's](https://ciqual.anses.fr/) to distribute, not mine.
 - **Tests.** They exist, they are not published.
-- **The chat interface.** In the original this is a set of MCP tools driven
-  from Claude Code, which is how a meal gets logged as a sentence. That layer
-  is tied to a wider personal system and is not extracted here — these modules
-  are the half underneath it, and they are callable directly.
+- **The wider system.** These modules came out of a larger personal setup
+  (notes, todos, a graph over them). Only the health, food and Garmin parts are
+  here.
 
 ## What it does not do
 
