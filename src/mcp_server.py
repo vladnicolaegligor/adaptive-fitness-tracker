@@ -363,7 +363,7 @@ def meal_recompute(meal_id: int) -> dict | None:
 # garmin_core is pure stdlib and safe to import at call time; garmin_client
 # pulls in `garminconnect`, so it stays inside the sync tool. A top-level
 # import of it would take down every tool on this server on a machine where
-# package is missing, not just the two below.
+# that package is missing, not just the two below.
 
 @mcp.tool()
 def garmin_sync(days: int = 3, end: str | None = None) -> dict:
