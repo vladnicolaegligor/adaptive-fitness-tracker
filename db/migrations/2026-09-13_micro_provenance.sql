@@ -1,0 +1,13 @@
+-- Per-food hybrid provenance: a branded item's LABEL is authoritative for its
+-- macros and for whatever micros it declares, but EU labels declare almost no
+-- micronutrients. Reading 362 mg of calcium on a day containing mozzarella,
+-- yogurt, whey and cas pane is not a measurement — it is the absence of one.
+--
+-- So micros may be filled from a CIQUAL generic equivalent while the label
+-- keeps the macros. That mixes two sources inside one food row, which is sound
+-- and standard practice but MUST be visible: this column records which CIQUAL
+-- food the gap-filling micros came from, so the blend is never silent.
+--
+-- Rule enforced in food_core.attach_ciqual_micros(): a micro the LABEL states
+-- always wins. CIQUAL only fills what the label left unsaid.
+ALTER TABLE food ADD COLUMN micro_ciqual_code TEXT;

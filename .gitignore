@@ -1,0 +1,12 @@
+# a profile describes a person; the example is the one that ships
+profile.json
+
+# data, and the Garmin token cache that lives alongside it
+db/*.db
+db/*.db-shm
+db/*.db-wal
+db/garmin_tokens/
+
+__pycache__/
+*.pyc
+.DS_Store
